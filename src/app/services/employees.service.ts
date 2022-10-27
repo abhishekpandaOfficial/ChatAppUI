@@ -14,4 +14,18 @@ baseApiUrl : string = environment.baseApiUrl;
   getAllEmployees(): Observable<Employee[]>{
      return this.http.get<Employee[]>(this.baseApiUrl + '/api/Chat');
   }
+
+  addEmployee(addEmployeeRequest: Employee): Observable<Employee>{
+    addEmployeeRequest.id ='00000000-0000-0000-0000-000000000000';
+    return this.http.post<Employee>(this.baseApiUrl + '/api/Chat', addEmployeeRequest)
+  }
+
+  getEmployeeById(id:string): Observable<Employee>{
+   return this.http.get<Employee>(this.baseApiUrl + '/api/Chat/'+ id)
+  }
+
+  updateEmployee(id: string, updateEmployeerequest:Employee):Observable<Employee>{
+   return this.http.put<Employee>(this.baseApiUrl + '/api/Chat/'+ id,
+          updateEmployeerequest )
+  }
 }
