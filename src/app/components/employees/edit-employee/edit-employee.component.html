@@ -36,7 +36,9 @@
             name="department" [(ngModel)]="employeeDetails.department">
           </div>
         
-        <button type="submit" class="btn btn-primary">Update Employee</button>
+        <button type="submit" class="btn btn-primary mr-5">Update Employee</button>
+        <button type="button" class="btn btn-danger" 
+        (click)="deleteEmployee(employeeDetails.id)">Delete Employee</button>
       </form>
     </div>
     

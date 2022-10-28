@@ -28,4 +28,8 @@ baseApiUrl : string = environment.baseApiUrl;
    return this.http.put<Employee>(this.baseApiUrl + '/api/Chat/'+ id,
           updateEmployeerequest )
   }
+
+  deleteEmployee(id: string):Observable<Employee> {
+   return this.http.delete<Employee>(this.baseApiUrl + '/api/Chat/'+ id)
+  }
 }
